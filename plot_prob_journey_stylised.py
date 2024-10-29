@@ -15,10 +15,10 @@ def dict_to_arr(dis):
 
 def plot_dis_journey(arr, ax, label, color, thin=False):
         if thin:
-            lw = 0.75
+            lw = 0.9
             arrow_length_ratio = 200
         else:
-            lw = 1.5
+            lw = 1.8
             arrow_length_ratio = 400
         # Plot the CAD line
         x, y, z = arr[:, 0], arr[:, 1], arr[:, 2]
@@ -73,12 +73,12 @@ def plot_journeys(data_complex: Dict[str, Any]):
     plot_dis_journey(cad_arr, ax, 'CAD', 'blue')
     plot_dis_journey(dola_cad_arr, ax, 'CAD-DoLa', 'red')
 
-    ax.plot([dola_dis_with_context[0]], [dola_dis_with_context[1]], [dola_dis_with_context[2]], 'ro', color='darkred', label='DoLa output with context')
-    # ax.plot([dola_dis_no_context[0]], [dola_dis_no_context[1]], [dola_dis_no_context[2]], 'ro', color='darkred', label='DoLa output without context')
+    ax.plot([dola_dis_with_context[0]], [dola_dis_with_context[1]], [dola_dis_with_context[2]], 'ro', color='darkred', label='CAD-DoLa ($\\beta=1$)')
+    ax.plot([dola_dis_no_context[0]], [dola_dis_no_context[1]], [dola_dis_no_context[2]], 'ro', color='black')
 
     # Plot regular dots with and without context
-    ax.plot([dis_with_context[0]], [dis_with_context[1]], [dis_with_context[2]], 'ro', color='navy', label='Output with context')
-    # ax.plot([dis_no_context[0]], [dis_no_context[1]], [dis_no_context[2]], 'ro', color='navy', label='Output without context')
+    ax.plot([dis_with_context[0]], [dis_with_context[1]], [dis_with_context[2]], 'ro', color='navy', label='CAD ($\\beta=1$)')
+    ax.plot([dis_no_context[0]], [dis_no_context[1]], [dis_no_context[2]], 'ro', color='black')
 
     # Set axis limits and labels
     ax.set_xlim(0, 1)
