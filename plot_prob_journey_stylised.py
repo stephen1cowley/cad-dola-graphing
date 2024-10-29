@@ -14,29 +14,31 @@ def dict_to_arr(dis):
 
 
 def plot_dis_journey(arr, ax, label, color, thin=False):
-        if thin:
-            lw = 0.9
-            arrow_length_ratio = 200
-        else:
-            lw = 1.8
-            arrow_length_ratio = 400
-        # Plot the CAD line
-        x, y, z = arr[:, 0], arr[:, 1], arr[:, 2]
-        dx, dy, dz = np.diff(x), np.diff(y), np.diff(z)
+    if thin:
+        lw = 0.9
+        arrow_length_ratio = 200
+    else:
+        lw = 1.8
+        arrow_length_ratio = 400
+    # Plot the CAD line
+    x, y, z = arr[:, 0], arr[:, 1], arr[:, 2]
+    dx, dy, dz = np.diff(x), np.diff(y), np.diff(z)
 
-        ax.quiver(
-            x[:-1] + dx * 0.999, y[:-1] + dy * 0.999, z[:-1] + dz * 0.999,  # Position near end of each line
-            dx * 10, dy * 10, dz * 10,                          # Small vectors for arrowheads
-            normalize=True, length=0.0001, arrow_length_ratio=arrow_length_ratio, color=color, lw=lw, label=label
-        )
-        ax.plot(arr[:, 0], arr[:, 1], arr[:, 2], color=color, lw=lw)
+    ax.quiver(
+        x[:-1] + dx * 0.999, y[:-1] + dy * 0.999, z[:-1] + dz * 0.999,  # Position near end of each line
+        dx * 10, dy * 10, dz * 10,                          # Small vectors for arrowheads
+        normalize=True, length=0.0001, arrow_length_ratio=arrow_length_ratio, color=color, lw=lw, label=label
+    )
+    ax.plot(arr[:, 0], arr[:, 1], arr[:, 2], color=color, lw=lw)
 
 
 def plot_journeys(data_complex: Dict[str, Any]):
     "Create 1 simplex plot for a given distribution"
 
+    q_num: int = data_complex["num"]
     question: str = data_complex["question"]  # The prompt, excluding any context
     data: Dict = data_complex["all_distributions"]  # The main distributions of interest
+    print(q_num)
 
     words = list(data["dis_with_context"].keys())  # The three words of interest to plot on x, y, z
 
