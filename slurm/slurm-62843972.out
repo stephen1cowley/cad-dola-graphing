@@ -1,0 +1,178 @@
+Loading rhel8/default-amp
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 libpciaccess/0.16/gcc-9.4.0-6fonbj6
+    libiconv/1.16/gcc-9.4.0-ahebbov libxml2/2.9.12/gcc-9.4.0-gnknt5e
+    ncurses/6.2/gcc-9.4.0-aiirok7 hwloc/2.5.0/gcc-9.4.0-7sqomga
+    libevent/2.1.12/gcc-9.4.0-hgny7cm numactl/2.0.14/gcc-9.4.0-52dwc6n
+    cuda/11.4.0/gcc-9.4.0-3hnxhjt gdrcopy/2.2/gcc-9.4.0-e4igtfp
+    knem/1.1.4/gcc-9.4.0-bpbxgva libnl/3.3.0/gcc-9.4.0-whwhrwb
+    rdma-core/34.0/gcc-9.4.0-5eo5n2u ucx/1.11.1/gcc-9.4.0-lktqyl4
+    openmpi/4.1.1/gcc-9.4.0-epagguv
+Changed directory to /rds/user/ssc42/hpc-work/memotrap-testing.
+
+JobID: 62843972
+======
+Time: Mon Oct 21 12:30:45 BST 2024
+Running on master node: gpu-q-30
+Current directory: /rds/user/ssc42/hpc-work/memotrap-testing
+
+Nodes allocated:
+================
+gpu-q-30
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+/rds/user/ssc42/hpc-work/memotrap-testing/run_tests.sh 
+
+/home/ssc42/pytorch-env/lib/python3.8/site-packages/transformers/utils/hub.py:128: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1322.29it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.31s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  7.45s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.33s/it]
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+Model load time: 18.3305s
+0. CAD answer: ' fonder.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power of life and death'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' lunch, but there'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence.'
+600. Correct answer: ' it.'
+700. CAD answer: ' starves.'
+700. Correct answer: ' grows.'
+800. CAD answer: ' happiness.'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=-1.0, dola set to None, model huggyllama/llama-7b, we achieved a score of 47/860
+Evaluation time for beta=-1.0: 137.7391s
+0. CAD answer: ' fonder.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power.'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' lunch.'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence.'
+600. Correct answer: ' it.'
+700. CAD answer: ' stands still.'
+700. Correct answer: ' grows.'
+800. CAD answer: ' happiness.'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=-0.5, dola set to None, model huggyllama/llama-7b, we achieved a score of 72/860
+Evaluation time for beta=-0.5: 126.3967s
+0. CAD answer: ' fonder.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power.'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' lunch.'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence.'
+600. Correct answer: ' it.'
+700. CAD answer: ' grows.'
+700. Correct answer: ' grows.'
+800. CAD answer: ' joy.'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=0.0, dola set to None, model huggyllama/llama-7b, we achieved a score of 156/860
+Evaluation time for beta=0.0: 122.9244s
+0. CAD answer: ' heavy.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power.'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' world.'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence.'
+600. Correct answer: ' it.'
+700. CAD answer: ' grows.'
+700. Correct answer: ' grows.'
+800. CAD answer: ' joy; only giving does'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=0.5, dola set to None, model huggyllama/llama-7b, we achieved a score of 252/860
+Evaluation time for beta=0.5: 121.5002s
+0. CAD answer: ' heavy.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power.'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' world.'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence.'
+600. Correct answer: ' it.'
+700. CAD answer: ' grows the rose grows the'
+700. Correct answer: ' grows.'
+800. CAD answer: ' joy; only giving does'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=1.0, dola set to None, model huggyllama/llama-7b, we achieved a score of 261/860
+Evaluation time for beta=1.0: 125.0639s
+0. CAD answer: ' heavy.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power.'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' world.'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence."'
+600. Correct answer: ' it.'
+700. CAD answer: ' grows the rose grows the'
+700. Correct answer: ' grows.'
+800. CAD answer: ' joy; only giving does'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=1.5, dola set to None, model huggyllama/llama-7b, we achieved a score of 261/860
+Evaluation time for beta=1.5: 126.4466s
+0. CAD answer: ' heavy.'
+0. Correct answer: ' heavy.'
+100. CAD answer: ' power.'
+100. Correct answer: ' power.'
+200. CAD answer: ' lie.'
+200. Correct answer: ' sleep.'
+300. CAD answer: '.'
+300. Correct answer: ' to.'
+400. CAD answer: ' eye.'
+400. Correct answer: ' eye.'
+500. CAD answer: ' world.'
+500. Correct answer: ' world.'
+600. CAD answer: ' pestilence."'
+600. Correct answer: ' it.'
+700. CAD answer: ' grows the rose grows the'
+700. Correct answer: ' grows.'
+800. CAD answer: ' joy; only giving does'
+800. Correct answer: ' joy.'
+RESULT: CAD with coefficient=2.0, dola set to None, model huggyllama/llama-7b, we achieved a score of 255/860
+Evaluation time for beta=2.0: 128.6375s
+Final results: {'-1.0': 47, '-0.5': 72, '0.0': 156, '0.5': 252, '1.0': 261, '1.5': 261, '2.0': 255}
+Successfully finished the experiment

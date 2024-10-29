@@ -1,0 +1,230 @@
+Loading rhel8/default-amp
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 libpciaccess/0.16/gcc-9.4.0-6fonbj6
+    libiconv/1.16/gcc-9.4.0-ahebbov libxml2/2.9.12/gcc-9.4.0-gnknt5e
+    ncurses/6.2/gcc-9.4.0-aiirok7 hwloc/2.5.0/gcc-9.4.0-7sqomga
+    libevent/2.1.12/gcc-9.4.0-hgny7cm numactl/2.0.14/gcc-9.4.0-52dwc6n
+    cuda/11.4.0/gcc-9.4.0-3hnxhjt gdrcopy/2.2/gcc-9.4.0-e4igtfp
+    knem/1.1.4/gcc-9.4.0-bpbxgva libnl/3.3.0/gcc-9.4.0-whwhrwb
+    rdma-core/34.0/gcc-9.4.0-5eo5n2u ucx/1.11.1/gcc-9.4.0-lktqyl4
+    openmpi/4.1.1/gcc-9.4.0-epagguv
+Changed directory to /rds/user/ssc42/hpc-work/memotrap-testing.
+
+JobID: 63101839
+======
+Time: Sun Oct 27 13:55:05 GMT 2024
+Running on master node: gpu-q-41
+Current directory: /rds/user/ssc42/hpc-work/memotrap-testing
+
+Nodes allocated:
+================
+gpu-q-41
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+/rds/user/ssc42/hpc-work/memotrap-testing/find_examples.sh 
+
+/home/ssc42/pytorch-env/lib/python3.8/site-packages/transformers/utils/hub.py:128: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1413.41it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:12<00:12, 12.55s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  7.32s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.10s/it]
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+Model load time: 17.8341s
+Q9. Reg. answer: ' risk of being sued for negligence if they give advice that is wrong.'
+Q9. CAD answer: ' business.'
+Q9. CAD-DoLa answer: ' risk of being sued for negligence if they give advice that is wrong.'
+Q9. Correct answer: ' business.'
+Q17. Reg. answer: ' song that is half-forgotten.'
+Q17. CAD answer: ' song.'
+Q17. CAD-DoLa answer: ' song that is half-forgotten.'
+Q17. Correct answer: ' song.'
+Q22. Reg. answer: ' the artist.'
+Q22. CAD answer: ' it.'
+Q22. CAD-DoLa answer: ' the artist.'
+Q22. Correct answer: ' it.'
+Q93. Reg. answer: ' business.'
+Q93. CAD answer: ' affairs.'
+Q93. CAD-DoLa answer: ' business.'
+Q93. Correct answer: ' affairs.'
+Q104. Reg. answer: ' cat, but satisfaction brought it back.'
+Q104. CAD answer: ' man.'
+Q104. CAD-DoLa answer: ' cat, but satisfaction brought it back.'
+Q104. Correct answer: ' man.'
+Q136. Reg. answer: ' accuser.'
+Q136. CAD answer: ' explanation.'
+Q136. CAD-DoLa answer: ' accuser.'
+Q136. Correct answer: ' explanation.'
+Q144. Reg. answer: ' is lost.'
+Q144. CAD answer: ' dead.'
+Q144. CAD-DoLa answer: ' is lost.'
+Q144. Correct answer: ' dead.'
+Q147. Reg. answer: ' skin, you must be a crocodile.'
+Q147. CAD answer: " skin is to shed one's skin is to shed one's crocodile skin."
+Q147. CAD-DoLa answer: ' skin, you must be a crocodile.'
+Q147. Correct answer: ' skin.'
+Q152. Reg. answer: ' right.'
+Q152. CAD answer: ' happy.'
+Q152. CAD-DoLa answer: ' right.'
+Q152. Correct answer: ' happy.'
+Q165. Reg. answer: ' is a community of believers who have been called together by the Holy Spirit to live under the'
+Q165. CAD answer: ' is a little church.'
+Q165. CAD-DoLa answer: ' is a community of believers who have been called together by the Holy Spirit to live under the'
+Q165. Correct answer: ' church.'
+Q169. Reg. answer: ' workshop.'
+Q169. CAD answer: ' tools.'
+Q169. CAD-DoLa answer: ' workshop.'
+Q169. Correct answer: ' tools.'
+Q173. Reg. answer: ' themselves.'
+Q173. CAD answer: ' too.'
+Q173. CAD-DoLa answer: ' themselves.'
+Q173. Correct answer: ' too.'
+Q206. Reg. answer: ' it.'
+Q206. CAD answer: ' it so.'
+Q206. CAD-DoLa answer: ' it.'
+Q206. Correct answer: ' so.'
+Q225. Reg. answer: ' ox.'
+Q225. CAD answer: ' egg.'
+Q225. CAD-DoLa answer: ' ox.'
+Q225. Correct answer: ' egg.'
+Q235. Reg. answer: ' us.'
+Q235. CAD answer: ' ourselves.'
+Q235. CAD-DoLa answer: ' us.'
+Q235. Correct answer: ' ourselves.'
+Q240. Reg. answer: ' thorns.'
+Q240. CAD answer: ' petals.'
+Q240. CAD-DoLa answer: ' thorns.'
+Q240. Correct answer: ' petals.'
+Q244. Reg. answer: ' evil.'
+Q244. CAD answer: ' good.'
+Q244. CAD-DoLa answer: ' evil.'
+Q244. Correct answer: ' good.'
+Q259. Reg. answer: ' hand, far from heart.'
+Q259. CAD answer: ' hand.'
+Q259. CAD-DoLa answer: ' hand, far from heart.'
+Q259. Correct answer: ' hand.'
+Q288. Reg. answer: ' one.'
+Q288. CAD answer: ' none.'
+Q288. CAD-DoLa answer: ' one.'
+Q288. Correct answer: ' none.'
+Q296. Reg. answer: ' win, but he will not be a man.'
+Q296. CAD answer: ' win.'
+Q296. CAD-DoLa answer: ' win, but he will not be a man.'
+Q296. Correct answer: ' win.'
+Q302. Reg. answer: ' fool.'
+Q302. CAD answer: ' man.'
+Q302. CAD-DoLa answer: ' fool.'
+Q302. Correct answer: ' man.'
+Q318. Reg. answer: ' thee.'
+Q318. CAD answer: ' you.'
+Q318. CAD-DoLa answer: ' thee.'
+Q318. Correct answer: ' you.'
+Q319. Reg. answer: '.'
+Q319. CAD answer: ' anymore.'
+Q319. CAD-DoLa answer: '.'
+Q319. Correct answer: ' anymore.'
+Q331. Reg. answer: ' faults, nor can it be without forgiveness.'
+Q331. CAD answer: " fault, nor can nature's finest gems be without flaws."
+Q331. CAD-DoLa answer: ' faults, nor can it be without forgiveness.'
+Q331. Correct answer: ' flaws.'
+Q352. Reg. answer: ' well.'
+Q352. CAD answer: ' good.'
+Q352. CAD-DoLa answer: ' well.'
+Q352. Correct answer: ' good.'
+Q378. Reg. answer: ' accuser.'
+Q378. CAD answer: ' explanation.'
+Q378. CAD-DoLa answer: ' accuser.'
+Q378. Correct answer: ' explanation.'
+Q388. Reg. answer: ' slowly.'
+Q388. CAD answer: ' now.'
+Q388. CAD-DoLa answer: ' slowly.'
+Q388. Correct answer: ' now.'
+Q398. Reg. answer: ' not merely the absence of disease, but a positive state of well-being.'
+Q398. CAD answer: ' good.'
+Q398. CAD-DoLa answer: ' not merely the absence of disease, but a positive state of well-being.'
+Q398. Correct answer: ' good.'
+Q424. Reg. answer: ' runs away.'
+Q424. CAD answer: ' fails.'
+Q424. CAD-DoLa answer: ' runs away.'
+Q424. Correct answer: ' fails.'
+Q435. Reg. answer: ' the root of all evil.'
+Q435. CAD answer: ' death.'
+Q435. CAD-DoLa answer: ' the root of all evil.'
+Q435. Correct answer: ' death.'
+Q470. Reg. answer: ' more.'
+Q470. CAD answer: ' better.'
+Q470. CAD-DoLa answer: ' more.'
+Q470. Correct answer: ' better.'
+Q522. Reg. answer: ' business.'
+Q522. CAD answer: ' affairs.'
+Q522. CAD-DoLa answer: ' business.'
+Q522. Correct answer: ' affairs.'
+Q562. Reg. answer: ' an island.'
+Q562. CAD answer: ' perfect.'
+Q562. CAD-DoLa answer: ' an island.'
+Q562. Correct answer: ' perfect.'
+Q566. Reg. answer: ' asking.'
+Q566. CAD answer: ' talking about it.'
+Q566. CAD-DoLa answer: ' asking.'
+Q566. Correct answer: ' it.'
+Q567. Reg. answer: ' it but to go to the end of the world.'
+Q567. CAD answer: ' it to do but write it.'
+Q567. CAD-DoLa answer: ' it but to go to the end of the world.'
+Q567. Correct answer: ' it.'
+Q578. Reg. answer: ' mind.'
+Q578. CAD answer: ' sight... Out of sight... Out of sight... Out of sight... Out of sight... Out of'
+Q578. CAD-DoLa answer: ' mind.'
+Q578. Correct answer: ' sight.'
+Q580. Reg. answer: ' over.'
+Q580. CAD answer: ' done.'
+Q580. CAD-DoLa answer: ' over.'
+Q580. Correct answer: ' done.'
+Q612. Reg. answer: ' removed from a little pot.'
+Q612. CAD answer: ' removed.'
+Q612. CAD-DoLa answer: ' removed from a little pot.'
+Q612. Correct answer: ' removed.'
+Q624. Reg. answer: ' cure.'
+Q624. CAD answer: ' gold.'
+Q624. CAD-DoLa answer: ' cure.'
+Q624. Correct answer: ' gold.'
+Q658. Reg. answer: ' back.'
+Q658. CAD answer: ' use.'
+Q658. CAD-DoLa answer: ' back.'
+Q658. Correct answer: ' use.'
+Q704. Reg. answer: ' moss.'
+Q704. CAD answer: ' dust.'
+Q704. CAD-DoLa answer: ' moss.'
+Q704. Correct answer: ' dust.'
+Q719. Reg. answer: ' night.'
+Q719. CAD answer: ' themselves.'
+Q719. CAD-DoLa answer: ' night.'
+Q719. Correct answer: ' themselves.'
+Q738. Reg. answer: ' best thoughts.'
+Q738. CAD answer: ' __________ __________ of the worst.'
+Q738. CAD-DoLa answer: ' best thoughts.'
+Q738. Correct answer: ' worst.'
+Q748. Reg. answer: ' pass, but the memories will last forever.'
+Q748. CAD answer: ' pass.'
+Q748. CAD-DoLa answer: ' pass, but the memories will last forever.'
+Q748. Correct answer: ' pass.'
+Q766. Reg. answer: ' die.'
+Q766. CAD answer: ' do.'
+Q766. CAD-DoLa answer: ' die.'
+Q766. Correct answer: ' do.'
+Q788. Reg. answer: ' see.'
+Q788. CAD answer: ' watch.'
+Q788. CAD-DoLa answer: ' see.'
+Q788. Correct answer: ' watch.'
+Q803. Reg. answer: ' grease.'
+Q803. CAD answer: ' message.'
+Q803. CAD-DoLa answer: ' grease.'
+Q803. Correct answer: ' message.'
+Q853. Reg. answer: ' old age.'
+Q853. CAD answer: ' decisions.'
+Q853. CAD-DoLa answer: ' old age.'
+Q853. Correct answer: ' decisions.'
+Final questions of interest: [9, 17, 22, 93, 104, 136, 144, 147, 152, 165, 169, 173, 206, 225, 235, 240, 244, 259, 288, 296, 302, 318, 319, 331, 352, 378, 388, 398, 424, 435, 470, 522, 562, 566, 567, 578, 580, 612, 624, 658, 704, 719, 738, 748, 766, 788, 803, 853]
+Successfully finished the experiment
