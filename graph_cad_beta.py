@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from typing import Dict, List
 import os
 
-data_folder: str = 'results'
+data_folder: str = 'results_novel'
 json_files: List[str] = os.listdir(data_folder)
 
 for json_file in json_files:

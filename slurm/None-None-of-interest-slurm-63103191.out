@@ -1,0 +1,985 @@
+Loading rhel8/default-amp
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 libpciaccess/0.16/gcc-9.4.0-6fonbj6
+    libiconv/1.16/gcc-9.4.0-ahebbov libxml2/2.9.12/gcc-9.4.0-gnknt5e
+    ncurses/6.2/gcc-9.4.0-aiirok7 hwloc/2.5.0/gcc-9.4.0-7sqomga
+    libevent/2.1.12/gcc-9.4.0-hgny7cm numactl/2.0.14/gcc-9.4.0-52dwc6n
+    cuda/11.4.0/gcc-9.4.0-3hnxhjt gdrcopy/2.2/gcc-9.4.0-e4igtfp
+    knem/1.1.4/gcc-9.4.0-bpbxgva libnl/3.3.0/gcc-9.4.0-whwhrwb
+    rdma-core/34.0/gcc-9.4.0-5eo5n2u ucx/1.11.1/gcc-9.4.0-lktqyl4
+    openmpi/4.1.1/gcc-9.4.0-epagguv
+Changed directory to /rds/user/ssc42/hpc-work/memotrap-testing.
+
+JobID: 63103191
+======
+Time: Sun Oct 27 17:42:32 GMT 2024
+Running on master node: gpu-q-15
+Current directory: /rds/user/ssc42/hpc-work/memotrap-testing
+
+Nodes allocated:
+================
+gpu-q-15
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+/rds/user/ssc42/hpc-work/memotrap-testing/run_tests_nq.sh None None
+
+/home/ssc42/pytorch-env/lib/python3.8/site-packages/transformers/utils/hub.py:128: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1469.88it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.33s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  7.58s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.45s/it]
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+Token indices sequence length is longer than the specified maximum sequence length for this model (2602 > 2048). Running this sequence through the model will result in indexing errors
+Model load time: 18.5911s
+0. CAD answer: '23'
+0. Correct answers: '23'
+Time: 20.226213455200195
+100. CAD answer: '1'
+100. Correct answers: 'felix baumgartner'
+Time: 55.64651322364807
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 94.25891447067261
+300. CAD answer: '1'
+300. Correct answers: 'mickey rourke'
+Time: 148.49871945381165
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 180.95410108566284
+500. CAD answer: '1984 michael douglas'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 204.9523103237152
+600. CAD answer: '1'
+600. Correct answers: 'teri garr'
+Time: 291.9359610080719
+700. CAD answer: '1'
+700. Correct answers: 'inner circle'
+Time: 333.8616769313812
+800. CAD answer: '13'
+800. Correct answers: '10'
+Time: 372.88678884506226
+900. CAD answer: '1971 war was fought between india and pakistan'
+900. Correct answers: 'yahya khan'
+Time: 417.8601586818695
+1000. CAD answer: '49ers'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 508.89778423309326
+1100. CAD answer: 'yuzuru hanyu'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 554.5277805328369
+1200. CAD answer: '1'
+1200. Correct answers: 'hanna alström'
+Time: 646.3668806552887
+1300. CAD answer: '1970s'
+1300. Correct answers: 'luther ingram'
+Time: 697.2542173862457
+1400. CAD answer: '1'
+1400. Correct answers: 'john mcconnell'
+Time: 763.0306746959686
+1500. CAD answer: '10'
+1500. Correct answers: '6'
+Time: 805.5517168045044
+1600. CAD answer: 'supreme court of canada'
+1600. Correct answers: 'supreme court of canada'
+Time: 855.4313697814941
+1700. CAD answer: '1'
+1700. Correct answers: 'gareth barry'
+Time: 892.6759660243988
+1800. CAD answer: '1000'
+1800. Correct answers: 'jerry rice'
+Time: 948.7206678390503
+1900. CAD answer: '59'
+1900. Correct answers: '59'
+Time: 996.5472002029419
+2000. CAD answer: '2007'
+2000. Correct answers: '2007'
+Time: 1024.896791934967
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 1075.8427367210388
+2200. CAD answer: '12000000000000000000'
+2200. Correct answers: 'burj khalifa'
+Time: 1137.8138093948364
+2300. CAD answer: '1960'
+2300. Correct answers: '1960'
+Time: 1171.1614832878113
+2400. CAD answer: '1'
+2400. Correct answers: 'yugoslavia'
+Time: 1204.8359937667847
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 1289.3103790283203
+2600. CAD answer: '10'
+2600. Correct answers: '10'
+Time: 1326.4353494644165
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 1369.1842136383057
+RESULT: CAD with coefficient=-1.0, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 876/2773
+Evaluation time for beta=-1.0: 1400.3351s
+0. CAD answer: '23'
+0. Correct answers: '23'
+Time: 1419.0933294296265
+100. CAD answer: '1'
+100. Correct answers: 'felix baumgartner'
+Time: 1456.3289556503296
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 1491.6818001270294
+300. CAD answer: '1'
+300. Correct answers: 'mickey rourke'
+Time: 1549.310559272766
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 1581.759460926056
+500. CAD answer: '1'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 1604.5926434993744
+600. CAD answer: '1'
+600. Correct answers: 'teri garr'
+Time: 1678.0823111534119
+700. CAD answer: '1'
+700. Correct answers: 'inner circle'
+Time: 1711.306679725647
+800. CAD answer: '10'
+800. Correct answers: '10'
+Time: 1740.953208208084
+900. CAD answer: '1971 war was fought between india and pakistan'
+900. Correct answers: 'yahya khan'
+Time: 1782.6125357151031
+1000. CAD answer: '49ers'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 1872.610261440277
+1100. CAD answer: 'yuzuru hanyu'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 1911.6548824310303
+1200. CAD answer: '1'
+1200. Correct answers: 'hanna alström'
+Time: 1997.1081635951996
+1300. CAD answer: '1'
+1300. Correct answers: 'luther ingram'
+Time: 2035.0511238574982
+1400. CAD answer: '1'
+1400. Correct answers: 'john mcconnell'
+Time: 2100.1165091991425
+1500. CAD answer: '1'
+1500. Correct answers: '6'
+Time: 2142.996123790741
+1600. CAD answer: 'supreme court of canada'
+1600. Correct answers: 'supreme court of canada'
+Time: 2177.9393231868744
+1700. CAD answer: '649'
+1700. Correct answers: 'gareth barry'
+Time: 2210.158809900284
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 2256.5874881744385
+1900. CAD answer: '59'
+1900. Correct answers: '59'
+Time: 2302.518715620041
+2000. CAD answer: '2007'
+2000. Correct answers: '2007'
+Time: 2347.280371904373
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 2403.919408082962
+2200. CAD answer: '10001000000000000000'
+2200. Correct answers: 'burj khalifa'
+Time: 2465.9420289993286
+2300. CAD answer: '1960'
+2300. Correct answers: '1960'
+Time: 2497.8380737304688
+2400. CAD answer: '1'
+2400. Correct answers: 'yugoslavia'
+Time: 2525.2031428813934
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 2602.0274024009705
+2600. CAD answer: '10'
+2600. Correct answers: '10'
+Time: 2641.908870458603
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 2681.8847892284393
+RESULT: CAD with coefficient=-0.5, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 924/2773
+Evaluation time for beta=-0.5: 1308.6633s
+0. CAD answer: '23'
+0. Correct answers: '23'
+Time: 2727.757043361664
+100. CAD answer: 'felix baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 2795.8163809776306
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 2884.194541454315
+300. CAD answer: '1'
+300. Correct answers: 'mickey rourke'
+Time: 2950.368673324585
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 2983.3817529678345
+500. CAD answer: 'michael douglas'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 3009.3287155628204
+600. CAD answer: '1'
+600. Correct answers: 'teri garr'
+Time: 3082.5228819847107
+700. CAD answer: '1'
+700. Correct answers: 'inner circle'
+Time: 3134.4055392742157
+800. CAD answer: '10'
+800. Correct answers: '10'
+Time: 3165.6940088272095
+900. CAD answer: 'yahya khan'
+900. Correct answers: 'yahya khan'
+Time: 3194.214418411255
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 3284.7545890808105
+1100. CAD answer: '1'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 3328.002846479416
+1200. CAD answer: 'hanna alström'
+1200. Correct answers: 'hanna alström'
+Time: 3417.623172044754
+1300. CAD answer: '1'
+1300. Correct answers: 'luther ingram'
+Time: 3475.239265203476
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 3554.2728922367096
+1500. CAD answer: '1'
+1500. Correct answers: '6'
+Time: 3602.7905671596527
+1600. CAD answer: 'supreme court of canada'
+1600. Correct answers: 'supreme court of canada'
+Time: 3635.6395699977875
+1700. CAD answer: '649 barry gareth'
+1700. Correct answers: 'gareth barry'
+Time: 3669.4971730709076
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 3720.767063140869
+1900. CAD answer: '100'
+1900. Correct answers: '59'
+Time: 3770.2629613876343
+2000. CAD answer: '2007'
+2000. Correct answers: '2007'
+Time: 3818.0719707012177
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 3886.21932554245
+2200. CAD answer: '101010100'
+2200. Correct answers: 'burj khalifa'
+Time: 3939.2020518779755
+2300. CAD answer: '1960'
+2300. Correct answers: '1960'
+Time: 3979.795054912567
+2400. CAD answer: '1'
+2400. Correct answers: 'yugoslavia'
+Time: 4009.831913948059
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 4097.962978839874
+2600. CAD answer: '10'
+2600. Correct answers: '10'
+Time: 4139.580786705017
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 4180.0487768650055
+RESULT: CAD with coefficient=0.0, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 1116/2773
+Evaluation time for beta=0.0: 1511.8908s
+0. CAD answer: '23'
+0. Correct answers: '23'
+Time: 4239.646742105484
+100. CAD answer: 'felix baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 4304.686930894852
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 4405.8025777339935
+300. CAD answer: 'mickey rourke as harley davidson'
+300. Correct answers: 'mickey rourke'
+Time: 4461.561782836914
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 4493.374708652496
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 4536.611305713654
+600. CAD answer: 'teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 4601.505331754684
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 4670.4188804626465
+800. CAD answer: '10'
+800. Correct answers: '10'
+Time: 4718.660606622696
+900. CAD answer: 'yahya khan'
+900. Correct answers: 'yahya khan'
+Time: 4756.4788210392
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 4856.476539134979
+1100. CAD answer: '1'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 4910.877025842667
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 4997.619888544083
+1300. CAD answer: 'luther ingram'
+1300. Correct answers: 'luther ingram'
+Time: 5065.429546117783
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 5168.004159927368
+1500. CAD answer: '1 th th 1'
+1500. Correct answers: '6'
+Time: 5235.938297748566
+1600. CAD answer: 'supreme court of canada'
+1600. Correct answers: 'supreme court of canada'
+Time: 5273.351866006851
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 5325.815900564194
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 5390.8687336444855
+1900. CAD answer: '100 ul dd dl'
+1900. Correct answers: '59'
+Time: 5466.347322463989
+2000. CAD answer: '2007'
+2000. Correct answers: '2007'
+Time: 5536.610912799835
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 5607.442065000534
+2200. CAD answer: '1 questions andational textives'
+2200. Correct answers: 'burj khalifa'
+Time: 5671.616053819656
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 5736.98335313797
+2400. CAD answer: '1'
+2400. Correct answers: 'yugoslavia'
+Time: 5777.819064378738
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 5882.966954469681
+2600. CAD answer: '10'
+2600. Correct answers: '10'
+Time: 5944.305599927902
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 6001.4860854148865
+RESULT: CAD with coefficient=0.5, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 1070/2773
+Evaluation time for beta=0.5: 1819.2899s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 6058.992200613022
+100. CAD answer: 'felix baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 6130.63881111145
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 6241.5718195438385
+300. CAD answer: 'mickey rourke as harley davidson'
+300. Correct answers: 'mickey rourke'
+Time: 6301.426584720612
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 6347.118877410889
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 6400.768731594086
+600. CAD answer: 'teri garr li'
+600. Correct answers: 'teri garr'
+Time: 6469.808695077896
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 6546.314730644226
+800. CAD answer: '10'
+800. Correct answers: '10'
+Time: 6605.092675685883
+900. CAD answer: 'mohammad yahya khan was president of pakistan during indopakistani'
+900. Correct answers: 'yahya khan'
+Time: 6651.835963487625
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 6762.811541557312
+1100. CAD answer: '1'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 6825.075056552887
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 6913.9348402023315
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 6986.333442211151
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 7090.434624910355
+1500. CAD answer: '1 th 1 th'
+1500. Correct answers: '6'
+Time: 7160.231710195541
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 7208.920282840729
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 7273.872803926468
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 7344.454588890076
+1900. CAD answer: '100 ul dd dl'
+1900. Correct answers: '59'
+Time: 7437.360362291336
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 7513.08584523201
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 7594.612090110779
+2200. CAD answer: '1 questions andational textives'
+2200. Correct answers: 'burj khalifa'
+Time: 7674.762208938599
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 7749.162279129028
+2400. CAD answer: '1'
+2400. Correct answers: 'yugoslavia'
+Time: 7797.598183631897
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 7907.824620723724
+2600. CAD answer: '10'
+2600. Correct answers: '10'
+Time: 7980.822712659836
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 8037.870423555374
+RESULT: CAD with coefficient=1.0, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 924/2773
+Evaluation time for beta=1.0: 2040.8167s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 8099.809073448181
+100. CAD answer: 'felix baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 8171.00309753418
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 8286.04489850998
+300. CAD answer: 'li mickey rourke as harley davidson li li don'
+300. Correct answers: 'mickey rourke'
+Time: 8360.354118585587
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 8408.351576805115
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 8461.934201002121
+600. CAD answer: 'li teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 8533.793221950531
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 8614.876824140549
+800. CAD answer: '10'
+800. Correct answers: '10'
+Time: 8675.403053283691
+900. CAD answer: 'mohammad yahya khan was president of pakistan from 1969 to'
+900. Correct answers: 'yahya khan'
+Time: 8729.280781030655
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 8852.14558339119
+1100. CAD answer: '1 dick button'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 8918.60247349739
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 9009.619344234467
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 9087.13724899292
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 9199.800611972809
+1500. CAD answer: '0 th th'
+1500. Correct answers: '6'
+Time: 9274.563433647156
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 9331.537739992142
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 9402.92657828331
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 9481.085571289062
+1900. CAD answer: '100 ul dd dl'
+1900. Correct answers: '59'
+Time: 9578.013864040375
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 9661.225716114044
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 9750.071290016174
+2200. CAD answer: '1 questions questions andigh textively'
+2200. Correct answers: 'burj khalifa'
+Time: 9840.541172981262
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 9914.15773677826
+2400. CAD answer: '6 republics'
+2400. Correct answers: 'yugoslavia'
+Time: 9966.21137213707
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 10087.209352254868
+2600. CAD answer: '10'
+2600. Correct answers: '10'
+Time: 10165.650995492935
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 10229.451081752777
+RESULT: CAD with coefficient=1.5, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 835/2773
+Evaluation time for beta=1.5: 2198.2804s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 10298.08932518959
+100. CAD answer: 'felix baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 10369.359312534332
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 10483.056401252747
+300. CAD answer: 'li mickey rourke as harley davidson li li'
+300. Correct answers: 'mickey rourke'
+Time: 10558.442176580429
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 10607.01608133316
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 10659.22706913948
+600. CAD answer: 'li teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 10726.822091579437
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 10814.566967725754
+800. CAD answer: '10'
+800. Correct answers: '10'
+Time: 10874.682380199432
+900. CAD answer: 'mohammad yahya khan was president of pakistan from 1969 to'
+900. Correct answers: 'yahya khan'
+Time: 10927.215786457062
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 11050.846118211746
+1100. CAD answer: '1 dick button'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 11120.554906845093
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 11226.901829719543
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 11307.305379867554
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 11420.022399187088
+1500. CAD answer: '0 th th'
+1500. Correct answers: '6'
+Time: 11499.46556520462
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 11557.79196715355
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 11631.804359912872
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 11712.472612142563
+1900. CAD answer: '80 ul dd dl'
+1900. Correct answers: '59'
+Time: 11809.651644706726
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 11890.537400960922
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 11979.334173440933
+2200. CAD answer: '1 questions questions andigh textively'
+2200. Correct answers: 'burj khalifa'
+Time: 12069.244617700577
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 12146.861183166504
+2400. CAD answer: '6 republics with borders drawn along ethnic and historical lines bosnia and herzegovina'
+2400. Correct answers: 'yugoslavia'
+Time: 12212.427071332932
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 12334.196379423141
+2600. CAD answer: '10 episodes'
+2600. Correct answers: '10'
+Time: 12413.809497356415
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 12484.962542772293
+RESULT: CAD with coefficient=2.0, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 804/2773
+Evaluation time for beta=2.0: 2255.5221s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 12553.611459255219
+100. CAD answer: 'felx baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 12613.855058431625
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 12729.558593034744
+300. CAD answer: 'li mickey rourke as harley davidson li li'
+300. Correct answers: 'mickey rourke'
+Time: 12804.361550569534
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 12854.283395528793
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 12904.874928951263
+600. CAD answer: 'li teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 12972.495685100555
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 13059.059497833252
+800. CAD answer: '10 episodes in season 3 of good witch'
+800. Correct answers: '10'
+Time: 13128.665565490723
+900. CAD answer: 'mohammad yahya khan was president of pakistan from 25 march 19'
+900. Correct answers: 'yahya khan'
+Time: 13185.28238773346
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 13311.88382935524
+1100. CAD answer: '1 dick button'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 13386.240613222122
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 13492.262553930283
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 13572.861321687698
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 13686.29778432846
+1500. CAD answer: '0 th th'
+1500. Correct answers: '6'
+Time: 13767.08182477951
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 13827.798825263977
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 13900.961118221283
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 13986.611932754517
+1900. CAD answer: '80 ul dd dl'
+1900. Correct answers: '59'
+Time: 14086.341494560242
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 14173.357798814774
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 14268.408809661865
+2200. CAD answer: '3 questions questions orational textives'
+2200. Correct answers: 'burj khalifa'
+Time: 14359.080177307129
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 14440.960886478424
+2400. CAD answer: '6 republics with borders drawn along ethnic and historical lines bosnia and herzegovina'
+2400. Correct answers: 'yugoslavia'
+Time: 14510.642453670502
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 14632.08880329132
+2600. CAD answer: '10 episodes'
+2600. Correct answers: '10'
+Time: 14712.980990171432
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 14784.525426149368
+RESULT: CAD with coefficient=2.5, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 758/2773
+Evaluation time for beta=2.5: 2298.6619s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 14852.273839235306
+100. CAD answer: 'felx baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 14911.501453876495
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 15032.352071523666
+300. CAD answer: 'li mickey rourke as harley davidson li li'
+300. Correct answers: 'mickey rourke'
+Time: 15111.77153301239
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 15160.172392606735
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 15211.743059635162
+600. CAD answer: 'li teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 15281.076183080673
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 15368.06477355957
+800. CAD answer: '10 episodes in season 3 of good witch'
+800. Correct answers: '10'
+Time: 15439.093847751617
+900. CAD answer: 'mohammed ayub khan was president of pakistan from 1958 to 19'
+900. Correct answers: 'yahya khan'
+Time: 15502.703824043274
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 15628.947965860367
+1100. CAD answer: '1 dick button'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 15703.312306165695
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 15808.67548418045
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 15889.189027786255
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 16002.120644569397
+1500. CAD answer: '0 th th'
+1500. Correct answers: '6'
+Time: 16082.95427274704
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 16144.303843259811
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 16221.411894798279
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 16307.83169054985
+1900. CAD answer: '80 ul dd dl'
+1900. Correct answers: '59'
+Time: 16404.82351231575
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 16493.2142765522
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 16589.07290816307
+2200. CAD answer: '3 questions questions orational textives'
+2200. Correct answers: 'burj khalifa'
+Time: 16680.019781589508
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 16761.55642557144
+2400. CAD answer: '6 republics with borders drawn along ethnic and historical lines bosnia and herzegovina'
+2400. Correct answers: 'yugoslavia'
+Time: 16833.333607673645
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 16955.46423459053
+2600. CAD answer: '10 episodes'
+2600. Correct answers: '10'
+Time: 17037.67676591873
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 17109.141040325165
+RESULT: CAD with coefficient=3.0, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 756/2773
+Evaluation time for beta=3.0: 2323.4009s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 17175.673988103867
+100. CAD answer: 'felx baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 17236.549781799316
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 17358.47241306305
+300. CAD answer: 'li mickey rourke as harley davidson li li'
+300. Correct answers: 'mickey rourke'
+Time: 17437.484449386597
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 17489.67127919197
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 17539.788496255875
+600. CAD answer: 'li teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 17610.467301130295
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 17696.8493578434
+800. CAD answer: '10 episodes in season 3 of good witch'
+800. Correct answers: '10'
+Time: 17771.355767011642
+900. CAD answer: 'mohammed ayub khan was president of pakistan from 1958 to 19'
+900. Correct answers: 'yahya khan'
+Time: 17842.20051264763
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 17968.392063617706
+1100. CAD answer: '1 dick button'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 18042.71453523636
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 18148.36989712715
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 18229.550671577454
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 18342.457696437836
+1500. CAD answer: '0 th th'
+1500. Correct answers: '6'
+Time: 18422.202820301056
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 18484.425768136978
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 18561.424091100693
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 18650.161343336105
+1900. CAD answer: '80 ul dd dl'
+1900. Correct answers: '59'
+Time: 18753.825305700302
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 18844.769729614258
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 18938.25893139839
+2200. CAD answer: '3 questions questions orational textives'
+2200. Correct answers: 'burj khalifa'
+Time: 19029.21598148346
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 19111.35827946663
+2400. CAD answer: '6 republics with borders drawn along ethnic and historical lines bosnia and herzegovina'
+2400. Correct answers: 'yugoslavia'
+Time: 19182.48291993141
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 19307.520044088364
+2600. CAD answer: '10 episodes'
+2600. Correct answers: '10'
+Time: 19388.632623910904
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 19460.1067237854
+RESULT: CAD with coefficient=3.5, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 747/2773
+Evaluation time for beta=3.5: 2351.5883s
+0. CAD answer: '23 episodes'
+0. Correct answers: '23'
+Time: 19527.26254940033
+100. CAD answer: 'felx baumgartner'
+100. Correct answers: 'felix baumgartner'
+Time: 19588.146173000336
+200. CAD answer: '1'
+200. Correct answers: 'christina applegate' 'joanna cassidy' 'john getz' 'keith coogan' 'josh charles' 'concetta tomei' 'david duchovny' 'kimmy robertson' 'jayne brook' 'eda reiss merin' 'robert hy gorman' 'danielle harris' 'christopher pettiet' 'jeff bollow' 'michael kopelow' 'dan castellaneta voice'
+Time: 19701.39671087265
+300. CAD answer: 'li mickey rourke as harley davidson li li'
+300. Correct answers: 'mickey rourke'
+Time: 19780.44543337822
+400. CAD answer: '1996'
+400. Correct answers: '1996'
+Time: 19832.673248529434
+500. CAD answer: 'michael douglas kathleen turner and danny devito'
+500. Correct answers: 'michael douglas' 'kathleen turner' 'danny devito'
+Time: 19884.120573282242
+600. CAD answer: 'li teri garr as mrs'
+600. Correct answers: 'teri garr'
+Time: 19951.854780435562
+700. CAD answer: 'inner circle'
+700. Correct answers: 'inner circle'
+Time: 20038.305335998535
+800. CAD answer: '10 episodes in season 3 of good witch'
+800. Correct answers: '10'
+Time: 20114.409165620804
+900. CAD answer: 'mohammed ayub khan was president of pakistan from 1958 to 19'
+900. Correct answers: 'yahya khan'
+Time: 20194.11178779602
+1000. CAD answer: '1'
+1000. Correct answers: 'kansas city chiefs' 'seattle seahawks' 'dallas cowboys'
+Time: 20320.024503469467
+1100. CAD answer: '1 dick button'
+1100. Correct answers: 'yuzuru hanyu'
+Time: 20393.158831357956
+1200. CAD answer: 'hanna alström and bjørn floberg appear as crown princess tilde of sweden'
+1200. Correct answers: 'hanna alström'
+Time: 20498.847953796387
+1300. CAD answer: 'luther ingram sang song'
+1300. Correct answers: 'luther ingram'
+Time: 20579.7349255085
+1400. CAD answer: 'john mcconnell'
+1400. Correct answers: 'john mcconnell'
+Time: 20692.576155424118
+1500. CAD answer: '0 th th'
+1500. Correct answers: '6'
+Time: 20776.5336997509
+1600. CAD answer: 'supreme court of canada is ultimate authority on matter'
+1600. Correct answers: 'supreme court of canada'
+Time: 20838.843778133392
+1700. CAD answer: '649 barry gareth gareth barry aston villa manchester city everton west'
+1700. Correct answers: 'gareth barry'
+Time: 20915.88172340393
+1800. CAD answer: '1549 jerry rice'
+1800. Correct answers: 'jerry rice'
+Time: 21007.487346172333
+1900. CAD answer: '80 ul dd dl'
+1900. Correct answers: '59'
+Time: 21111.714191913605
+2000. CAD answer: '2007 season'
+2000. Correct answers: '2007'
+Time: 21204.90502166748
+2100. CAD answer: '1773'
+2100. Correct answers: '1773'
+Time: 21298.37598800659
+2200. CAD answer: '3 questions questions orational textives'
+2200. Correct answers: 'burj khalifa'
+Time: 21387.48227763176
+2300. CAD answer: '1960 summer olympics in rome'
+2300. Correct answers: '1960'
+Time: 21469.396502494812
+2400. CAD answer: '6 republics with borders drawn along ethnic and historical lines bosnia and herzegovina'
+2400. Correct answers: 'yugoslavia'
+Time: 21540.213195085526
+2500. CAD answer: '1998'
+2500. Correct answers: '1998'
+Time: 21665.86220932007
+2600. CAD answer: '10 episodes'
+2600. Correct answers: '10'
+Time: 21743.251331329346
+2700. CAD answer: ''
+2700. Correct answers: 'oregon'
+Time: 21813.103704452515
+RESULT: CAD with coefficient=4.0, dola-good set to None, dola-bad set to None, model huggyllama/llama-7b, we achieved a score of 729/2773
+Evaluation time for beta=4.0: 2353.6500s
+Final results: {'-1.0': 876, '-0.5': 924, '0.0': 1116, '0.5': 1070, '1.0': 924, '1.5': 835, '2.0': 804, '2.5': 758, '3.0': 756, '3.5': 747, '4.0': 729}
+Successfully finished the experiment
