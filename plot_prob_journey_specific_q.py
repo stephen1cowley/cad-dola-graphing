@@ -32,11 +32,11 @@ def plot_dis_journey(arr, ax, label, color, thin=False):
     ax.plot(arr[:, 0], arr[:, 1], arr[:, 2], color=color, lw=lw)
 
 
-def plot_journeys_1(data_complex: Dict[str, Any]):
+def plot_journeys_1(data_complex: Dict[str, Any], q):
     "Create 1 simplex plot for a given distribution"
 
     q_num: int = data_complex["num"]
-    if q_num != 235:
+    if q_num != q:
         return
     question: str = data_complex["question"]  # The prompt, excluding any context
     data: Dict = data_complex["all_distributions"]  # The main distributions of interest
@@ -99,11 +99,11 @@ def plot_journeys_1(data_complex: Dict[str, Any]):
     plt.show()
 
 
-def plot_journeys_2(data_complex: Dict[str, Any]):
+def plot_journeys_2(data_complex: Dict[str, Any], q):
     "Create 1 simplex plot for a given distribution"
 
     q_num: int = data_complex["num"]
-    if q_num != 235:
+    if q_num != q:
         return
     question: str = data_complex["question"]  # The prompt, excluding any context
     data: Dict = data_complex["all_distributions"]  # The main distributions of interest
@@ -166,11 +166,11 @@ def plot_journeys_2(data_complex: Dict[str, Any]):
     plt.show()
 
 
-def plot_journeys_3(data_complex: Dict[str, Any]):
+def plot_journeys_3(data_complex: Dict[str, Any], q):
     "Create 1 simplex plot for a given distribution"
 
     q_num: int = data_complex["num"]
-    if q_num != 235:
+    if q_num != q:
         return
     question: str = data_complex["question"]  # The prompt, excluding any context
     data: Dict = data_complex["all_distributions"]  # The main distributions of interest
@@ -233,11 +233,11 @@ def plot_journeys_3(data_complex: Dict[str, Any]):
     plt.show()
 
 
-def plot_journeys_4(data_complex: Dict[str, Any]):
+def plot_journeys_4(data_complex: Dict[str, Any], q):
     "Create 1 simplex plot for a given distribution"
 
     q_num: int = data_complex["num"]
-    if q_num != 235:
+    if q_num != q:
         return
     question: str = data_complex["question"]  # The prompt, excluding any context
     data: Dict = data_complex["all_distributions"]  # The main distributions of interest
@@ -272,18 +272,18 @@ def plot_journeys_4(data_complex: Dict[str, Any]):
     vertices = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
     ax.plot_trisurf(vertices[:, 0], vertices[:, 1], vertices[:, 2], color='black', alpha=0.1, zorder=1)
     
-    plot_dis_journey(woc_arr, ax, 'Each layer without context', 'orange', True)
-    plot_dis_journey(wc_arr, ax, 'Each layer with context', 'lime', True)
+    # plot_dis_journey(woc_arr, ax, 'Each layer without context', 'orange', True)
+    # plot_dis_journey(wc_arr, ax, 'Each layer with context', 'lime', True)
     
-    plot_dis_journey(cad_arr, ax, 'CAD', 'blue')
+    # plot_dis_journey(cad_arr, ax, 'CAD', 'blue')
     plot_dis_journey(dola_cad_arr, ax, 'CAD-DoLa', 'red')
 
     ax.plot([dola_dis_with_context[0]], [dola_dis_with_context[1]], [dola_dis_with_context[2]], 'ro', color='darkred', label='CAD-DoLa ($\\beta=1$)')
     ax.plot([dola_dis_no_context[0]], [dola_dis_no_context[1]], [dola_dis_no_context[2]], 'ro', color='black')
 
     # Plot regular dots with and without context
-    ax.plot([dis_with_context[0]], [dis_with_context[1]], [dis_with_context[2]], 'ro', color='navy', label='CAD ($\\beta=1$)')
-    ax.plot([dis_no_context[0]], [dis_no_context[1]], [dis_no_context[2]], 'ro', color='black')
+    # ax.plot([dis_with_context[0]], [dis_with_context[1]], [dis_with_context[2]], 'ro', color='navy', label='CAD ($\\beta=1$)')
+    # ax.plot([dis_no_context[0]], [dis_no_context[1]], [dis_no_context[2]], 'ro', color='black')
 
     # Set axis limits and labels
     ax.set_xlim(0, 1)
@@ -305,7 +305,7 @@ if __name__ == "__main__":
         data_list = json.load(file)
 
     for data in data_list:
-        plot_journeys_1(data)
-        plot_journeys_2(data)
-        plot_journeys_3(data)
-        plot_journeys_4(data)
+        # plot_journeys_1(data, 17)
+        # plot_journeys_2(data, 17)
+        # plot_journeys_3(data, 17)
+        plot_journeys_4(data, 17)

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from typing import Dict, List
 import os
 
-data_folder: str = 'nq_results'
+data_folder: str = 'nq_results_novel'
 json_files: List[str] = os.listdir(data_folder)
 
 for json_file in json_files:
@@ -24,7 +24,7 @@ for json_file in json_files:
     plt.plot(x, y, label=layers)
 
 plt.xlabel("coefficient")
-plt.ylabel("EM /%")
+plt.ylabel("Recall /%")
 plt.legend()
 plt.title("CAD-DoLa Natural Questions Accuracy")
 plt.grid()
