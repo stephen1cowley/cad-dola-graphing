@@ -16,7 +16,7 @@ with open('nqswap/nqswap_terrible.jsonl', 'r') as file:
         else:
             my_nqswap.append({
                 "context": dataline["context_string"],
-                "answers": [dataline["gold_answers"]]
+                "answer": [dataline["gold_answers"]]
             })
         isq = not isq
 
