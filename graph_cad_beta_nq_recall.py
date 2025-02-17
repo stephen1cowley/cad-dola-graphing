@@ -6,6 +6,8 @@ import os
 data_folder: str = 'experiment_configs/novel-granular/corresponding-results'
 json_files: List[str] = os.listdir(data_folder)
 
+json_files = [json_files[1]] + [json_files[0]]
+
 for json_file_name in json_files:
     with open(data_folder + "/" + json_file_name, 'r') as file:
         data: Dict[str, Dict[str, int]] = json.load(file)
@@ -20,7 +22,7 @@ for json_file_name in json_files:
         x.append(float(key))
         y.append(recall_data[key] * 100 / 2773)
 
-    plt.plot(x, y, label=json_file_name.split(".")[0])
+    plt.plot(x, y, label=json_file_name.split(".")[0].split("-")[-2] + " prompt")
 
 plt.xlabel("log coefficient")
 plt.ylabel("Recall /%")

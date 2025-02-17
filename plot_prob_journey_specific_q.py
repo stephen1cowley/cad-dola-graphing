@@ -305,7 +305,7 @@ if __name__ == "__main__":
         data_list = json.load(file)
 
     for data in data_list:
-        # plot_journeys_1(data, 17)
+        plot_journeys_1(data, 17)
         # plot_journeys_2(data, 17)
         # plot_journeys_3(data, 17)
         plot_journeys_4(data, 17)

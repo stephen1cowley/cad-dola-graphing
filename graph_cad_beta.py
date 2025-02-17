@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from typing import Dict, List
 import os
 
-data_folder: str = 'results_novel_2'
+data_folder: str = 'results'
 json_files: List[str] = os.listdir(data_folder)
 
 for json_file in json_files:
@@ -20,12 +20,12 @@ for json_file in json_files:
         y.append(data[key] * 100 / 860)
 
     file_name: str = json_file.split(".")[0]
-    layers: str = file_name.split("_")[-2] + " " + file_name.split("_")[-1]
+    layers: str = file_name.split("_")[-2].lower() + " " + file_name.split("_")[-1].lower()
     plt.plot(x, y, label=layers)
 
 plt.xlabel("log coefficient")
 plt.ylabel("EM /%")
 plt.legend()
-plt.title("Additive CAD-DoLa Memotrap Accuracy")
+plt.title("CAD-DoLa Memotrap Accuracy")
 plt.grid()
 plt.show()

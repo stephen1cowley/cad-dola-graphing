@@ -3,12 +3,15 @@ import matplotlib.pyplot as plt
 from typing import Dict, List
 
 json_files: List[str] = [
-    'cad_dola_None_None.json',
+    'nqswap_results/exp_nqswap.json',
 ]
 
 for json_file in json_files:
     with open(json_file, 'r') as file:
-        data: Dict[str, int] = json.load(file)
+        data: Dict = json.load(file)
+
+        # For the new format:
+        data = data["Recall"]
 
     print(data)
 
@@ -17,14 +20,17 @@ for json_file in json_files:
 
     for key in data:
         x.append(float(key))
-        y.append(data[key] * 100 / 860)
+        y.append(data[key] * 100 / 3999)
 
     file_name: str = json_file.split(".")[0]
-    layers: str = file_name.split("_")[2] + " " + file_name.split("_")[3]
-    plt.plot(x, y, label=layers)
+    # layers: str = file_name.split("_")[2] + " " + file_name.split("_")[3]
+    # plt.ylim(bottom=0)
+    # plt.ylim(top=42)
+    plt.plot(x, y)
+
 
 plt.xlabel("coefficient")
-plt.ylabel("EM /%")
-plt.title("LLaMA-7B CAD Memotrap Accuracy")
+plt.ylabel("Recall /%")
+plt.title("LLaMA-13B CAD Natural Questions Swap Accuracy")
 plt.grid()
 plt.show()

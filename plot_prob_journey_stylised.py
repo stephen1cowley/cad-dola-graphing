@@ -69,18 +69,18 @@ def plot_journeys(data_complex: Dict[str, Any]):
     vertices = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
     ax.plot_trisurf(vertices[:, 0], vertices[:, 1], vertices[:, 2], color='black', alpha=0.1, zorder=1)
     
-    plot_dis_journey(woc_arr, ax, 'Each layer without context', 'orange', True)
-    plot_dis_journey(wc_arr, ax, 'Each layer with context', 'lime', True)
+    # plot_dis_journey(woc_arr, ax, 'Each layer without context', 'orange', True)
+    # plot_dis_journey(wc_arr, ax, 'Each layer with context', 'lime', True)
     
-    plot_dis_journey(cad_arr, ax, 'CAD', 'blue')
+    # plot_dis_journey(cad_arr, ax, 'CAD', 'blue')
     plot_dis_journey(dola_cad_arr, ax, 'CAD-DoLa', 'red')
 
-    ax.plot([dola_dis_with_context[0]], [dola_dis_with_context[1]], [dola_dis_with_context[2]], 'ro', color='darkred', label='CAD-DoLa ($\\beta=1$)')
-    ax.plot([dola_dis_no_context[0]], [dola_dis_no_context[1]], [dola_dis_no_context[2]], 'ro', color='black')
+    ax.plot([dola_dis_with_context[0]], [dola_dis_with_context[1]], [dola_dis_with_context[2]], 'ro', color='darkred')
+    ax.plot([dola_dis_no_context[0]], [dola_dis_no_context[1]], [dola_dis_no_context[2]], 'ro', color='darkred')
 
-    # Plot regular dots with and without context
-    ax.plot([dis_with_context[0]], [dis_with_context[1]], [dis_with_context[2]], 'ro', color='navy', label='CAD ($\\beta=1$)')
-    ax.plot([dis_no_context[0]], [dis_no_context[1]], [dis_no_context[2]], 'ro', color='black')
+    # # Plot regular dots with and without context
+    # ax.plot([dis_with_context[0]], [dis_with_context[1]], [dis_with_context[2]], 'ro', color='navy')
+    # ax.plot([dis_no_context[0]], [dis_no_context[1]], [dis_no_context[2]], 'ro', color='navy')
 
     # Set axis limits and labels
     ax.set_xlim(0, 1)
