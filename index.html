@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Probability Distribution Visualization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #question-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #info-panel {
+            margin-top: 20px;
+        }
+        #label-controls {
+            margin-top: 20px;
+        }
+        .control-group {
+            margin-bottom: 10px;
+        }
+        .control-group label {
+            display: inline-block;
+            width: 80px;
+        }
+        .control-group input {
+            width: 60px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h2>Question Selection</h2>
+            <select id="question-select"></select>
+            <div id="info-panel">
+                <h3>Current Question</h3>
+                <p id="question-text"></p>
+            </div>
+            <div id="label-controls">
+                <h3>Label Position</h3>
+                <div class="control-group">
+                    <label for="label-x-offset">X Offset:</label>
+                    <input type="number" id="label-x-offset" value="0" step="0.01">
+                </div>
+                <div class="control-group">
+                    <label for="label-y-offset">Y Offset:</label>
+                    <input type="number" id="label-y-offset" value="0.05" step="0.01">
+                </div>
+                <div class="control-group">
+                    <label for="label-z-offset">Z Offset:</label>
+                    <input type="number" id="label-z-offset" value="0" step="0.01">
+                </div>
+                <h3>Label Rotation (degrees)</h3>
+                <div class="control-group">
+                    <label for="label-x-rotation">X Rotation:</label>
+                    <input type="number" id="label-x-rotation" value="0" step="1">
+                </div>
+                <div class="control-group">
+                    <label for="label-y-rotation">Y Rotation:</label>
+                    <input type="number" id="label-y-rotation" value="0" step="1">
+                </div>
+                <div class="control-group">
+                    <label for="label-z-rotation">Z Rotation:</label>
+                    <input type="number" id="label-z-rotation" value="0" step="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.7/build/dat.gui.min.js"></script>
+    <script src="visualization.js"></script>
+</body>
+</html> 
