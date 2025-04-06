@@ -16,11 +16,24 @@
             position: relative;
             width: 100vw;
             height: 100vh;
+            display: flex;
+        }
+        #graph-container {
+            flex: 1;
+            position: relative;
+        }
+        #legend-panel {
+            position: absolute;
+            top: 20px;
+            left: 200px;
+            width: 280px;
+            background-color: rgba(255, 255, 255, 0.0);
+            padding: 15px;
+            border-radius: 5px;
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+            z-index: 100;
         }
         #sidebar {
-            position: absolute;
-            top: 0;
-            right: 0;
             width: 300px;
             height: 100vh;
             background-color: rgba(255, 255, 255, 0.9);
@@ -51,10 +64,30 @@
             width: 60px;
             padding: 5px;
         }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
+        .legend-label {
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div id="container">
+        <div id="graph-container">
+            <div id="legend-panel">
+                <div style="margin-top: 0; margin-bottom: 10px; font-size: 34px; font-weight: normal;">CAD coefficient α</div>
+                <div id="alpha-legend"></div>
+            </div>
+        </div>
         <div id="sidebar">
             <h2>Question Selection</h2>
             <select id="question-select"></select>
@@ -63,6 +96,10 @@
                 <p id="question-text"></p>
             </div>
             <div id="label-controls">
+                <h3>Label Controls</h3>
+                <div class="control-group">
+                    <button id="toggle-labels">Toggle Alpha Labels</button>
+                </div>
                 <h3>Label Position</h3>
                 <div class="control-group">
                     <label for="label-x-offset">X Offset:</label>

@@ -10,6 +10,110 @@ let axes = null;
 let alphaLabels = []; // Track alpha labels
 let connectingLines = []; // Track connecting lines
 let labelUpdateFunctions = []; // Track label update functions
+let showAlphaLabels = true; // Track whether alpha labels are visible
+let legendObjects = []; // Track legend objects
+
+// Function to convert RGB array to hex color
+function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(x => {
+        const hex = x.toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+    }).join('');
+}
+
+// Function to create 3D text
+function createTextSprite(text, color) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = 256;
+    canvas.height = 128;
+    
+    // Clear canvas
+    context.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw text
+    context.font = '24px Arial';
+    context.fillStyle = color;
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(text, canvas.width / 2, canvas.height / 2);
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.SpriteMaterial({ map: texture });
+    const sprite = new THREE.Sprite(material);
+    sprite.scale.set(0.2, 0.1, 1);
+    return sprite;
+}
+
+// Function to update the legend
+function updateLegend() {
+    const legend = document.getElementById('alpha-legend');
+    legend.innerHTML = ''; // Clear existing legend
+    
+    // Create legend items for whole number alpha values from -1 to 4
+    for (let alpha = -1; alpha <= 4; alpha++) {
+        const color = getColorForAlpha(alpha);
+        const rgb = color.toArray().map(x => Math.round(x * 255));
+        const hexColor = rgbToHex(rgb[0], rgb[1], rgb[2]);
+        
+        const legendItem = document.createElement('div');
+        legendItem.className = 'legend-item';
+        legendItem.style.display = 'flex';
+        legendItem.style.alignItems = 'center';
+        legendItem.style.marginBottom = '0px';
+        
+        const colorBox = document.createElement('div');
+        colorBox.className = 'legend-color';
+        colorBox.style.width = '40px';
+        colorBox.style.height = '40px';
+        colorBox.style.marginRight = '10px';
+        colorBox.style.border = '0px solid #ccc';
+        colorBox.style.backgroundColor = hexColor;
+        
+        const label = document.createElement('div');
+        label.className = 'legend-label';
+        label.style.fontSize = '30px';
+        label.textContent = `${alpha < 0 ? '−' : ''}${Math.abs(alpha)}.0`;
+        
+        legendItem.appendChild(colorBox);
+        legendItem.appendChild(label);
+        legend.appendChild(legendItem);
+    }
+}
+
+// Color gradient function
+function getColorForAlpha(alpha) {
+    // Normalize alpha from [-1, 4] to [0, 1]
+    const normalizedAlpha = (alpha + 1) / 5;
+    
+    // Color stops
+    const colorStops = [
+        { pos: 0, color: [0, 180, 0] },        // More Vivid Green
+        { pos: 0.5, color: [50, 100, 167] },   // Medium Teal
+        { pos: 1, color: [147, 42, 170] }      // Medium-dark Purple
+    ].sort((a, b) => a.pos - b.pos);  // Ensure stops are sorted by position
+    
+    // Find the two closest color stops
+    let lowerStop = colorStops[0];
+    let upperStop = colorStops[colorStops.length - 1];
+    
+    for (let i = 0; i < colorStops.length - 1; i++) {
+        if (normalizedAlpha >= colorStops[i].pos && normalizedAlpha <= colorStops[i + 1].pos) {
+            lowerStop = colorStops[i];
+            upperStop = colorStops[i + 1];
+            break;
+        }
+    }
+    
+    // Interpolate between the two colors
+    const t = (normalizedAlpha - lowerStop.pos) / (upperStop.pos - lowerStop.pos);
+    const r = Math.round(lowerStop.color[0] + t * (upperStop.color[0] - lowerStop.color[0]));
+    const g = Math.round(lowerStop.color[1] + t * (upperStop.color[1] - lowerStop.color[1]));
+    const b = Math.round(lowerStop.color[2] + t * (upperStop.color[2] - lowerStop.color[2]));
+    
+    return new THREE.Color(r / 255, g / 255, b / 255);
+}
 
 // Initialize Three.js scene
 function init() {
@@ -35,7 +139,7 @@ function init() {
     // Create renderer
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth - 300, window.innerHeight);
-    document.getElementById('container').appendChild(renderer.domElement);
+    document.getElementById('graph-container').appendChild(renderer.domElement);
 
     // Add lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -78,6 +182,17 @@ function init() {
 
     // Handle window resize
     window.addEventListener('resize', onWindowResize);
+
+    // Add event listener for toggle button
+    document.getElementById('toggle-labels').addEventListener('click', () => {
+        showAlphaLabels = !showAlphaLabels;
+        alphaLabels.forEach(label => {
+            label.style.display = showAlphaLabels ? 'block' : 'none';
+        });
+    });
+
+    // Create initial legend
+    updateLegend();
 }
 
 function onWindowResize() {
@@ -97,9 +212,9 @@ function createSimplex() {
     geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
     
     const material = new THREE.MeshBasicMaterial({ 
-        color: 0x808080,
+        color: 0x000000,
         transparent: true,
-        opacity: 0.3,
+        opacity: 0.1,
         side: THREE.DoubleSide
     });
     
@@ -184,7 +299,7 @@ function createPoints(distributions) {
 
     // Create points for each distribution
     const geometry = new THREE.SphereGeometry(0.02, 16, 16);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00b400 }); // Changed to green
+    // Material will be created per point with unique color
 
     // Convert object to array of distributions
     const distributionArray = Object.entries(distributions).map(([key, value]) => ({
@@ -197,7 +312,7 @@ function createPoints(distributions) {
 
     // Create a line material
     const lineMaterial = new THREE.MeshBasicMaterial({ color: 0x00b400 });
-    const lineRadius = 0.005; // Thickness of the connecting lines
+    const lineRadius = 0.007; // Thickness of the connecting lines
 
     distributionArray.forEach((dist, index) => {
         console.log('Processing distribution', index, ':', dist);
@@ -220,6 +335,9 @@ function createPoints(distributions) {
             return;
         }
 
+        // Create point with color based on alpha
+        const pointColor = getColorForAlpha(dist.position);
+        const material = new THREE.MeshBasicMaterial({ color: pointColor });
         const point = new THREE.Mesh(geometry, material);
         point.position.set(
             dist[keys[0]],
@@ -239,9 +357,10 @@ function createPoints(distributions) {
             const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
             const length = start.distanceTo(end);
             
-            // Create cylinder
+            // Create cylinder with color based on alpha
             const cylinderGeometry = new THREE.CylinderGeometry(lineRadius, lineRadius, length, 8);
-            const cylinder = new THREE.Mesh(cylinderGeometry, lineMaterial);
+            const cylinderMaterial = new THREE.MeshBasicMaterial({ color: pointColor });
+            const cylinder = new THREE.Mesh(cylinderGeometry, cylinderMaterial);
             
             // Position the cylinder at the midpoint
             cylinder.position.copy(midpoint);
@@ -256,13 +375,14 @@ function createPoints(distributions) {
         }
 
         // Add alpha label if position is between -1.0 and 1.5 or 4.0
-        if (dist.position >= -1.0 && dist.position <= 1.5 || dist.position == 4.0) {
+        if (dist.position == -1.0 || dist.position == 0.0) {
             const labelDiv = document.createElement('div');
             labelDiv.className = 'alpha-label';
-            labelDiv.textContent = `α=${dist.position.toFixed(1)}`;
+            labelDiv.textContent = `α=${dist.position < 0 ? '−' : ''}${Math.abs(dist.position).toFixed(1)}`;
             labelDiv.style.position = 'absolute';
             labelDiv.style.color = 'black';
-            labelDiv.style.fontSize = '32px';
+            labelDiv.style.fontSize = '30px';
+            labelDiv.style.display = showAlphaLabels ? 'block' : 'none';
             document.body.appendChild(labelDiv);
             alphaLabels.push(labelDiv);
 
@@ -360,9 +480,9 @@ function updateQuestion(index) {
         if (keys.length === 3) {
             // Update the labels
             const labels = [
-                { text: keys[0], position: new THREE.Vector3(1.12, 0, 0) },
-                { text: keys[1], position: new THREE.Vector3(0, 1.12, 0) },
-                { text: keys[2], position: new THREE.Vector3(0, 0, 1.12) }
+                { text: keys[0], type: 'x', position: new THREE.Vector3(1.2, 0, 0) },
+                { text: keys[1], type: 'y', position: new THREE.Vector3(0, 1.12, 0) },
+                { text: keys[2], type: 'z', position: new THREE.Vector3(0, 0, 1.2) }
             ];
 
             // Remove old labels
@@ -375,15 +495,25 @@ function updateQuestion(index) {
                 labelElement.textContent = label.text;
                 labelElement.style.position = 'absolute';
                 labelElement.style.color = 'black';
-                labelElement.style.fontSize = '32px';
+                labelElement.style.fontSize = '34px';
                 document.body.appendChild(labelElement);
 
                 function updateLabelPosition() {
                     const vector = label.position.clone().project(camera);
                     const x = (vector.x * 0.5 + 0.5) * (window.innerWidth - 300);
                     const y = -(vector.y * 0.5 - 0.5) * window.innerHeight;
-                    labelElement.style.transform = `translate(-50%, -50%)`;
-                    labelElement.style.left = `${x}px`;
+                    
+                    // Special positioning for x and z labels
+                    if (label.type === 'x') {
+                        labelElement.style.transform = 'translate(-100%, -50%)';
+                        labelElement.style.left = `${x}px`;
+                    } else if (label.type === 'z') {
+                        labelElement.style.transform = 'translate(0%, -50%)';
+                        labelElement.style.left = `${x}px`;
+                    } else {
+                        labelElement.style.transform = 'translate(-50%, -50%)';
+                        labelElement.style.left = `${x}px`;
+                    }
                     labelElement.style.top = `${y}px`;
                 }
 
@@ -397,6 +527,9 @@ function updateQuestion(index) {
     document.getElementById('question-text').textContent = currentQuestion.question;
     console.log('Creating points');
     createPoints(distributions);
+    
+    // Update legend when question changes
+    updateLegend();
 }
 
 // Animation loop
