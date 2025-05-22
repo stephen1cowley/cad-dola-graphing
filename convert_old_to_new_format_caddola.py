@@ -10,14 +10,23 @@ import json
 # ]
 # result_name: str = 'nq_caddola.json'
 
+# num_questions: int = 860
+# files: List[str] = [
+#     'results/cad_dola_None_None.json',
+#     'results/cad_dola_low_None.json',
+#     'results/cad_dola_None_low.json',
+#     'results/cad_dola_low_low.json',
+# ]
+# result_name: str = 'memotrap_caddola.json'
+
 num_questions: int = 860
 files: List[str] = [
-    'results/cad_dola_None_None.json',
-    'results/cad_dola_low_None.json',
-    'results/cad_dola_None_low.json',
-    'results/cad_dola_low_low.json',
+    'results_novel_2/cad_dola_None_None.json',
+    'results_novel_2/cad_dola_low_None.json',
+    'results_novel_2/cad_dola_None_low.json',
+    'results_novel_2/cad_dola_low_low.json',
 ]
-result_name: str = 'memotrap_caddola.json'
+result_name: str = 'memotrap_caddola_novel_2.json'
 
 with open(files[0], 'r') as f:
     data_0: Dict[str, int] = json.load(f)

@@ -460,7 +460,13 @@ function updateQuestion(index) {
         return;
     }
 
-    const distributions = currentQuestion.all_distributions.each_cad_dis;
+    // Get the distribution type based on the checkbox
+    const isDola = document.getElementById('dola-toggle').checked;
+    const distributions = isDola ? 
+        currentQuestion.all_distributions.dola_each_cad_dis : 
+        currentQuestion.all_distributions.each_cad_dis;
+    
+    console.log('Using distribution type:', isDola ? 'DoLa' : 'Standard');
     console.log('Distributions data:', distributions);
     
     if (!distributions) {
@@ -531,6 +537,14 @@ function updateQuestion(index) {
     // Update legend when question changes
     updateLegend();
 }
+
+// Add event listener for the DoLa toggle
+document.getElementById('dola-toggle').addEventListener('change', () => {
+    const currentIndex = document.getElementById('question-select').selectedIndex;
+    if (currentIndex >= 0) {
+        updateQuestion(currentIndex);
+    }
+});
 
 // Animation loop
 function animate() {
